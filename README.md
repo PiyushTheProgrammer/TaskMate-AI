@@ -16,7 +16,7 @@ TaskMate AI is an end-to-end intelligent web platform designed to eliminate repe
 2. **AI Client Management CRM (FR-9 – FR-16):** Lead, Active, and Completed client pipelines, search/filters, and AI-powered follow-up recommendations.
 3. **AI Requirement Analyzer (FR-17 – FR-25):** Unstructured text and document parser (.pdf, .docx, .txt) that automatically extracts Scope, Deliverables checklist, Estimated Budget range, Timeline, and Tech Stack.
 4. **Proposal, Quotation & Invoice Engine (FR-26 – FR-33):** Multi-template AI proposal generation, editable rich Markdown preview, itemized invoices, and **1-click ReportLab PDF export**.
-5. **Multi-Agent Task Orchestrator (Sequence & State Diagrams):** Autonomous multi-agent pipeline routing tasks to **Developer Agent** (APIs, code scaffolding, automated tests) and **Design Agent** (tokens, layout wireframes, design systems) with client revision loops (`Drafting` $\rightarrow$ `Queued` $\rightarrow$ `Processing` $\rightarrow$ `Reviewing` $\rightarrow$ `Completed` / `Reworking`).
+5. **Multi-Agent Task Orchestrator (Sequence & State Diagrams):** Autonomous multi-agent pipeline routing tasks to **Developer Agent** (APIs, code scaffolding, automated tests) and **Design Agent** (tokens, layout wireframes, design systems) with client revision loops (`Drafting` → `Queued` → `Processing` → `Reviewing` → `Completed` / `Reworking`).
 6. **Smart Scheduler & Calendar (FR-42 – FR-49):** Meetings, milestones, and deadline visualization, automatic conflict warning detection, and Google Calendar sync simulation.
 7. **Outreach & Communication Automation (FR-34 – FR-41):** AI message generator for Email and WhatsApp with customizable tone and scheduling.
 8. **Business Analytics Dashboard:** Real-time revenue tracking, expense logs, proposal win rates, and client distribution charts.
@@ -58,14 +58,14 @@ The database is automatically pre-seeded with realistic clients, proposals, and 
 ## 🛠️ System Architecture & Tech Stack
 
 ```mermaid
-graph TD
-    User([Freelancer / User]) <--> UI[React + Vite Frontend (Clean Human UI)]
-    UI <--> API[FastAPI REST Backend]
-    API <--> SQLite[(SQLite Database / SQLAlchemy)]
-    API <--> PDFEngine[ReportLab PDF Engine]
-    API <--> AIEngine[AI Engine: OpenAI API + Built-in NLP Fallback]
-    AIEngine --> DevAgent[Developer Agent]
-    AIEngine --> DesignAgent[Design Agent]
+flowchart TD
+    User(["Freelancer / User"]) <--> UI["React + Vite Frontend (Clean Human UI)"]
+    UI <--> API["FastAPI REST Backend"]
+    API <--> SQLite[("SQLite Database / SQLAlchemy")]
+    API <--> PDFEngine["ReportLab PDF Engine"]
+    API <--> AIEngine["AI Engine: OpenAI API + Built-in NLP Fallback"]
+    AIEngine --> DevAgent["Developer Agent"]
+    AIEngine --> DesignAgent["Design Agent"]
 ```
 
 - **Frontend:** React 19, Vite, Lucide Icons, Clean Vanilla CSS.
